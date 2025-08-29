@@ -16,7 +16,9 @@ public class Picture
     private Triangle roof;
     private Circle sun;
     private boolean drawn;
-
+    private Circle sun2;
+    private int yPosition;
+    private Person walk;
     /**
      * Constructor for objects of class Picture
      */
@@ -27,6 +29,8 @@ public class Picture
         roof = new Triangle();  
         sun = new Circle();
         drawn = false;
+        sun2 = new Circle();
+        walk = new Person();
     }
 
     /**
@@ -51,12 +55,25 @@ public class Picture
             roof.moveVertical(-60);
             roof.makeVisible();
     
-            sun.changeColor("yellow");
+            sun.changeColor("blue");
             sun.moveHorizontal(100);
             sun.moveVertical(-40);
             sun.changeSize(80);
             sun.makeVisible();
             drawn = true;
+            
+            sun2.changeColor("red");
+            sun2.moveHorizontal(100);
+            sun2.moveVertical(0);
+            sun2.changeSize(80);
+            sun2.makeVisible();
+            
+            walk.changeColor("yellow");
+            walk.moveHorizontal(-150);
+            walk.moveVertical(30);
+            walk.makeVisible();
+            
+            
         }
     }
 
@@ -81,4 +98,10 @@ public class Picture
         roof.changeColor("green");
         sun.changeColor("yellow");
     }
+    
+    public void sunsetl(){
+        sun.slowMoveVertical(200);
+        walk.slowMoveHorizontal(150);
+    }
 }
+
